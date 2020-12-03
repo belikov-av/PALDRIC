@@ -1,2 +1,2 @@
-# PALDRIF
-PAtient-Level DRIver Finder
+# PALDRIC
+PAtient-Level DRIver Classifier
