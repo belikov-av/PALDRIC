@@ -1,6 +1,6 @@
 # PALDRIC
 
-PAtient-Level DRIver Classifier is a Python 3.7 software package that translates cohort-level lists of driver genes or mutations from third-party algorithms to the patient level, classifies driver events according to the molecular causes and functional consequences, and presents comprehensive statistics on various kinds of driver events in various demographic and clinical groups of patients. PALDRIC allows to natively combine outputs of various third-party algorithms to investigate optimal combinations. PALDRIC is tightly integrated with SNADRIF (https://github.com/belikov-av/SNADRIF), GECNAV (https://github.com/belikov-av/GECNAV) and ANDRIF (https://github.com/belikov-av/ANDRIF) packages and requires their execution to obtain the necessary starting files. While conversion of the output files from third-party algorithms to a standard format necessary for ingestion has to be performed manually, the rest of the pipeline can be executed fully automatically in less than one hour on a modern PC (Linux, Windows or MacOS).
+PAtient-Level DRIver Classifier is a Python 3.7 software package that translates cohort-level lists of driver genes or mutations from third-party algorithms to the patient level, classifies driver events according to the molecular causes and functional consequences, and presents comprehensive statistics on various kinds of driver events in various demographic and clinical groups of patients. PALDRIC allows to natively combine outputs of various third-party algorithms to investigate optimal combinations. PALDRIC is tightly integrated with SNADRIF (https://github.com/belikov-av/SNADRIF), GECNAV (https://github.com/belikov-av/GECNAV) and ANDRIF (https://github.com/belikov-av/ANDRIF) packages and requires their execution to obtain the necessary starting files. While conversion of the output files from third-party algorithms to a standard format necessary for ingestion has to be performed manually, the rest of the pipeline can be executed fully automatically in less than 15 minutes on a modern PC (Linux, Windows or MacOS).
 
 This package has been developed by 
 
@@ -12,9 +12,10 @@ concept, pipeline, supervision | programming
 
 Pipeline overview
 
-First, manually convert cohort-level lists of driver genes (or mutations) from third-party algorithms into standard format: HUGO symbol, Entrez Gene ID, (Ensembl Transcript ID, mutation), cohort, removing all entries with q-value >0.05. 
-Then, PALDRIC converts these standardized files into patient-level files using TCGA PanCanAtlas SNA and CNA data processed previously via SNADRIF and GECNAV packages. This process takes approximately 1 hour per algorithm on a modern PC.
-You can then choose to analyze these processed outputs of third-party algorithms either individually or in any desirable combinations. All following steps are fully automated and are executed in less than a minute, which facilitates quick testing of various algorithm combinations.
+First, manually convert cohort-level lists of driver genes (or mutations) from third-party algorithms into standard format: 
+HUGO symbol, (Ensembl Transcript ID, mutation), cohort, removing all entries with q-value >0.05. 
+Then, PALDRIC converts these standardized files into patient-level files using TCGA PanCanAtlas SNA and CNA data processed previously via SNADRIF and GECNAV packages.
+You can then choose to analyze these processed outputs of third-party algorithms either individually or in any desirable combinations.
 Classification of driver alterations is performed according to the following key:
 
 Driver type	| Number of hyperactivating SNAs |	Number of inactivating SNAs |	HISR | CNA status |	Count as … driver event(s)
